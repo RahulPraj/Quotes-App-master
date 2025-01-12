@@ -7,7 +7,7 @@ function AllQuotes() {
 
   useEffect(function(){
    async function getQuotes(){
-     const res =  await axios.get('http://localhost:8080/allquotes');
+     const res =  await axios.get(`${process.env.REACT_APP_API_URL}/allquotes`);
      setQuotes(res.data);
     }
     getQuotes();

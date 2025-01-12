@@ -14,7 +14,7 @@ function ShowQuotes() {
   )
     useEffect(()=>{
       async  function fetchQuote(){
-         let res= await  axios.get(`http://localhost:8080/quotes/${params.id}`)
+         let res= await  axios.get(`${process.env.REACT_APP_API_URL}/quotes/${params.id}`)
          let {img, author, age, text} = res.data;
             setQuote({author, img, age, text})
         }
