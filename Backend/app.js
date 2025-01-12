@@ -21,7 +21,9 @@ mongoose.connect(process.env.MONGODB_URL)
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use(cors({
-    // origin: ["http://localhost:5173"],
+    origin: [
+        'https://quotes-app-front.onrender.com'
+        ,"http://localhost:5173"],
 }))
 
 // using seedDB
